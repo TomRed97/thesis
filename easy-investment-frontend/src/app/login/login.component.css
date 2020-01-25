@@ -1,0 +1,21 @@
+.login_container {
+  background-image: url("../../assets/images/login.jpg");
+  height: 100%;
+}
+
+.login_form {
+  width: 350px;
+  height: 350px;
+  background-color: #90a8e2;
+  opacity: 80%;
+  border-radius: 5px;
+  border: 1px solid darkblue;
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  text-align: center;
+}
+
+.example-full-width {
+  width: 80%;
+}
