@@ -1,0 +1,12 @@
+.toolbar_name {
+  font-family: Verdana, serif;
+  font-size: 32px;
+}
+
+.main_container {
+  height: 100%;
+}
+
+.main_content {
+  width: 200px;
+}

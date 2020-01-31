@@ -1,5 +1,7 @@
 .login_container {
   background-image: url("../../assets/images/login.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100%;
 }
 
@@ -11,8 +13,8 @@
   border-radius: 5px;
   border: 1px solid darkblue;
   position: absolute;
-  top: 20%;
-  left: 35%;
+  top: 25%;
+  left: 40%;
   text-align: center;
 }
 
