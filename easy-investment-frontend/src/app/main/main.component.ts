@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Route, Router} from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private routes: Router) {
+    // this.route.
+    console.log(this.routes.url)
+  }
 
   ngOnInit() {
   }

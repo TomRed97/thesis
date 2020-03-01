@@ -1,0 +1,12 @@
+.number-card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.number-card-title {
+  text-align: center;
+  color: #132487;
+  border-bottom: 1px solid #132487;
+  margin-bottom: 30px;
+}

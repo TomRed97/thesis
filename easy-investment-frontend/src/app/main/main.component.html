@@ -1,24 +1,50 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span class="toolbar_name">Easy Investment</span>
+    <span class="toolbar_spacer"></span>
+    <button mat-button color="accent">Log Out</button>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container class="main_container">
-  <mat-sidenav mode="side" opened class="main_content">
+  <mat-sidenav mode="side" opened class="main_nav">
     <mat-nav-list>
-      <h3 mat-subheader>Folders</h3>
-      <mat-list-item>
-<!--        <mat-icon mat-list-icon>folder</mat-icon>-->
-        <h4 mat-line>Home</h4>
+      <h3 mat-subheader>General</h3>
+      <mat-list-item [routerLink]="['overview']" routerLinkActive="main_nav_active">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <h4 mat-line>Overview</h4>
       </mat-list-item>
-      <mat-divider></mat-divider>
-      <h3 mat-subheader>Notes</h3>
+      <h3 mat-subheader>Main</h3>
       <mat-list-item>
-<!--        <mat-icon mat-list-icon>note</mat-icon>-->
+        <mat-icon mat-list-icon>apps</mat-icon>
         <h4 mat-line>Programs</h4>
+      </mat-list-item>
+      <mat-list-item [routerLink]="['forms']" routerLinkActive="main_nav_active">
+        <mat-icon mat-list-icon>format_shapes</mat-icon>
+        <h4 mat-line>Forms</h4>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>insert_chart</mat-icon>
+        <h4 mat-line>Reports</h4>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>dashboard</mat-icon>
+        <h4 mat-line>Dashboards</h4>
+      </mat-list-item>
+      <h3 mat-subheader>M&E</h3>
+      <mat-list-item>
+        <mat-icon mat-list-icon>score</mat-icon>
+        <h4 mat-line>Indicators</h4>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>account_tree</mat-icon>
+        <h4 mat-line>Frameworks</h4>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>Main content</mat-sidenav-content>
+  <mat-sidenav-content>
+    <mat-card class="main_content">
+      <router-outlet></router-outlet>
+    </mat-card>
+  </mat-sidenav-content>
 </mat-sidenav-container>

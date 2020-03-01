@@ -6,8 +6,22 @@ import {MainComponent} from './main.component';
 const routes: Routes = [
   {
     path: '',
-    component: MainComponent
-  }
+    component: MainComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'overview',
+      },
+      {
+        path: 'overview',
+        loadChildren: () => import('../overview/overview.module').then(m => m.OverviewModule)
+      },
+      {
+        path: 'forms',
+        loadChildren: () => import('../forms/forms.module').then(m => m.FormsModule)
+      }
+    ]
+  },
 ];
 
 @NgModule({

@@ -6,6 +6,9 @@ import { MainComponent } from './main.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import {MatListModule} from '@angular/material/list';
     MainRoutingModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule
   ]
 })
 export class MainModule { }

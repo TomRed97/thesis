@@ -7,6 +7,18 @@
   height: 100%;
 }
 
-.main_content {
+.main_nav {
   width: 200px;
+}
+
+.main_nav_active {
+  background-color: #4658c11f;
+}
+
+.toolbar_spacer {
+  flex: 1 1 auto;
+}
+
+.main_content {
+  height: 100%;
 }

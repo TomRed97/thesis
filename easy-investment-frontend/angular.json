@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "easy-investment-frontend"
+  "defaultProject": "easy-investment-frontend",
+  "cli": {
+    "analytics": "4a779e78-6aa2-4c08-938e-4ad3f82764d1"
+  }
 }
