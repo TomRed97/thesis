@@ -1,1 +1,44 @@
-<p>form-table works!</p>
+<div class="form-header">
+
+  <mat-form-field>
+    <mat-label>Select form type</mat-label>
+    <mat-select [(value)]="selectedFormType">
+      <mat-option [value]="formType.Program">Program</mat-option>
+      <mat-option [value]="formType.Project">Project</mat-option>
+      <mat-option [value]="formType.Activity">Activity</mat-option>
+      <mat-option [value]="formType.Indicator">Indicator</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-button color="primary">Create new form</button>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name</th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="formType">
+    <th mat-header-cell *matHeaderCellDef> Type</th>
+    <td mat-cell *matCellDef="let element"> {{element.formType}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="details">
+    <th mat-header-cell *matHeaderCellDef> Details</th>
+    <td mat-cell *matCellDef="let element"> {{element.details}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="createdDate">
+    <th mat-header-cell *matHeaderCellDef> Created Date</th>
+    <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="creatorId">
+    <th mat-header-cell *matHeaderCellDef> Creator</th>
+    <td mat-cell *matCellDef="let element"> {{element.creatorId}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

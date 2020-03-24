@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {FormsComponent} from './forms.component';
+import {FormTableComponent} from './component/form-table/form-table.component';
 
 
 const routes: Routes = [
@@ -8,14 +9,14 @@ const routes: Routes = [
     path: '',
     component: FormsComponent,
     children: [
-      // {
-      //   path: '',
-      //   redirectTo: 'overview',
-      // },
-      // {
-      //   path: 'overview',
-      //   loadChildren: () => import('../overview/overview.module').then(m => m.OverviewModule)
-      // },
+      {
+        path: '',
+        redirectTo: 'form-table',
+      },
+      {
+        path: 'form-table',
+        component: FormTableComponent
+      },
       // {
       //   path: 'forms',
       //   loadChildren: () => import('../forms/forms.module').then(m => m.FormsModule)
