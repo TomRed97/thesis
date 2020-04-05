@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Create New Category</h1>
+<div mat-dialog-content>
+  <form>
+    <mat-form-field class="category_name">
+      <mat-label>Name</mat-label>
+      <input matInput required
+             [name]="'category_name'"
+             placeholder="Category Name"
+             [(ngModel)]="category.name">
+    </mat-form-field>
+    <p>
+      Values
+    </p>
+    <p>
+      {{category.values | categoryValues}}
+    </p>
+    <mat-form-field class="category_name">
+      <mat-label>Value</mat-label>
+      <input matInput
+             [name]="'value_name'"
+             placeholder="Category Value"
+             [(ngModel)]="newValue">
+    </mat-form-field>
+    <div>
+      <button mat-flat-button color="primary"
+              [disabled]='!newValue'
+              (click)="addValue()">
+        Add value
+      </button>
+    </div>
+  </form>
+</div>
+
+<div mat-dialog-actions class="buttons_container">
+  <button mat-flat-button color="accent" (click)="onCancel()">Cancel</button>
+  <button mat-flat-button color="primary"
+          [disabled]='!category.name'
+          [mat-dialog-close]="category" cdkFocusInitial>
+    Save
+  </button>
+</div>

@@ -1,10 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import {LoginComponent} from './login/login.component';
 import {appRoutes} from './app.routing';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -18,7 +18,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule,
     RouterModule.forRoot(appRoutes),
     MatInputModule,
     MatButtonModule,
@@ -28,4 +27,5 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

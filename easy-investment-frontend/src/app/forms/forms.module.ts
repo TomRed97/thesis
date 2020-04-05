@@ -7,6 +7,8 @@ import {FormTableComponent} from './component/form-table/form-table.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {SharedModule} from '../shared/shared.module';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import {MatSelectModule} from '@angular/material/select';
     FormsRoutingModule,
     MatTableModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatPaginatorModule,
+    SharedModule
   ]
 })
 export class FormsModule {

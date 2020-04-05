@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormType} from '../../shared/enum/form.type';
+import {FormService} from '../../service/form.service';
+import {FormModel} from '../../shared/model/form.model';
+import {formTypeMessages} from '../../../shared/data/general-data';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-form-table',
@@ -12,15 +17,46 @@ export class FormTableComponent implements OnInit {
 
   public displayedColumns: string[];
 
-  public dataSource = [{name: 'kkkk', formType: 'gg', details: 'details', createdDate: 'hhh', creatorId: 5}];
+  public dataSource: MatTableDataSource<FormModel>;
 
-  public selectedFormType = FormType.Program;
+  // tslint:disable-next-line:variable-name
+  private _selectedFormType = null;
 
-  constructor() {
+  public get selectedFormType(): number {
+    return this._selectedFormType;
+  }
+
+  public set selectedFormType(value: number) {
+    this._selectedFormType = value;
+    this.applyFilter();
+  }
+
+  public formTypeMessages: Map<FormType, string>;
+
+  public formsData: FormModel[];
+
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+
+  constructor(private formService: FormService) {
     this.displayedColumns = ['name', 'formType', 'details', 'createdDate', 'creatorId'];
+    this.formTypeMessages = formTypeMessages;
   }
 
   ngOnInit(): void {
+    this.formService.getAllForms().subscribe((forms) => {
+      this.formsData = forms;
+      this.dataSource = new MatTableDataSource<FormModel>(this.formsData);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.filterPredicate = (data, filter) => {
+        return data.formType === +filter;
+      };
+    });
   }
 
+  applyFilter() {
+    this.dataSource.filter = this.selectedFormType ? this.selectedFormType.toString() : '';
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
 }

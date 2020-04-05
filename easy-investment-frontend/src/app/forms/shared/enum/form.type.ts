@@ -1,5 +1,5 @@
 export enum FormType {
-  Program,
+  Program = 1,
   Project,
   Activity,
   Indicator

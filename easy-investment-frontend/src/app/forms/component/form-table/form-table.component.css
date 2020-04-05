@@ -7,3 +7,12 @@ table {
   margin: 20px 0;
 }
 
+.form_table_container {
+  min-height: 700px;
+}
+
+.form_table_main_container {
+  min-height: 800px;
+}
+
+
