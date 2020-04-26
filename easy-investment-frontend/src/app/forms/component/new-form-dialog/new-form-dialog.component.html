@@ -1,0 +1,37 @@
+<div style="text-align: center">
+  <h1 mat-dialog-title>Create New Form</h1>
+  <div mat-dialog-content>
+    <form>
+      <mat-form-field>
+        <mat-label>Select form type</mat-label>
+        <mat-select [(value)]="selectedFormType" required>
+          <mat-option [value]="null">None</mat-option>
+          <mat-option [value]="formType.Program">Program</mat-option>
+          <mat-option [value]="formType.Project">Project</mat-option>
+          <mat-option [value]="formType.Activity">Activity</mat-option>
+          <mat-option [value]="formType.Indicator">Indicator</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <mat-form-field class="category_name">
+          <mat-label>Form Name</mat-label>
+          <input matInput
+                 required
+                 [name]="'form_name'"
+                 placeholder="Form Name"
+                 [(ngModel)]="formName">
+        </mat-form-field>
+      </div>
+
+    </form>
+  </div>
+
+  <div mat-dialog-actions class="buttons_container">
+    <button mat-flat-button color="accent" (click)="onCancel()">Cancel</button>
+    <button mat-flat-button color="primary"
+            [disabled]='!formName || !selectedFormType'
+            (click)="createForm()" cdkFocusInitial>
+      Create Form
+    </button>
+  </div>
+</div>

@@ -17,7 +17,7 @@ export class UserNamePipe implements PipeTransform {
       .pipe(
         map((users) => {
           const foundUser = users.find(user => user.id === value);
-          return foundUser ? foundUser.name : '';
+          return foundUser ? foundUser.userName : '';
         })
       );
   }

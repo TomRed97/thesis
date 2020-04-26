@@ -2,7 +2,7 @@
   <mat-toolbar-row>
     <span class="toolbar_name">Easy Investment</span>
     <span class="toolbar_spacer"></span>
-    <button mat-button color="accent">Administrator</button>
+    <button mat-button color="accent" [routerLink]="['user']">My Page</button>
     <button mat-button color="white">Log Out</button>
   </mat-toolbar-row>
 </mat-toolbar>
@@ -16,7 +16,7 @@
         <h4 mat-line>Overview</h4>
       </mat-list-item>
       <h3 mat-subheader>Main</h3>
-      <mat-list-item>
+      <mat-list-item [routerLink]="['programs']" routerLinkActive="main_nav_active">
         <mat-icon mat-list-icon>apps</mat-icon>
         <h4 mat-line>Programs</h4>
       </mat-list-item>
@@ -28,7 +28,7 @@
         <mat-icon mat-list-icon>format_shapes</mat-icon>
         <h4 mat-line>Forms</h4>
       </mat-list-item>
-      <mat-list-item>
+      <mat-list-item [routerLink]="['reports']" routerLinkActive="main_nav_active">
         <mat-icon mat-list-icon>insert_chart</mat-icon>
         <h4 mat-line>Reports</h4>
       </mat-list-item>
@@ -41,8 +41,8 @@
         <mat-icon mat-list-icon>score</mat-icon>
         <h4 mat-line>Indicators</h4>
       </mat-list-item>
-      <mat-list-item>
-        <mat-icon mat-list-icon>account_tree</mat-icon>
+      <mat-list-item [routerLink]="['frameworks']" routerLinkActive="main_nav_active">
+        <mat-icon mat-list-icon >account_tree</mat-icon>
         <h4 mat-line>Frameworks</h4>
       </mat-list-item>
     </mat-nav-list>

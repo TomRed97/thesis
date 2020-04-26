@@ -1,0 +1,112 @@
+@startuml
+
+class Category {
+    public id: number
+    public name: string
+    public values: JSON[]
+    public createdBy: User
+    public createdOn: Date
+}
+
+class Form {
+    public id: number
+    public name: string
+    public type: number
+    public structure: JSON
+    public createdBy: User
+    public createdOn: Date
+}
+
+
+class User {
+    public id: number;
+    public firstName: string;
+    public lastName: string;
+    public email: string;
+    public username: string;
+    public password: string;
+    public workPlace: string;
+    public birthDate: Date;
+    public role: Role
+}
+
+class Role {
+    public id: number
+    public name: string
+    public permissions: Permission[]
+}
+
+class Permission {
+    public id: number
+    public name: string
+}
+
+class Program {
+    public id: uuid
+    public name: string
+    public form: Form
+    public data: JSON
+    public createdBy: User
+    public createdOn: Date
+}
+
+class Project {
+    public id: uuid
+    public name: string
+    public form: Form
+    public data: JSON
+    public createdBy: User
+    public createdOn: Date
+}
+
+class Activity {
+    public id: uuid
+    public name: string
+    public form: Form
+    public data: JSON
+    public createdBy: User
+    public createdOn: Date
+}
+
+class Indicator {
+    public id: uuid
+    public name: string
+    public form: Form
+    public data: JSON
+    public createdBy: User
+    public createdOn: Date
+}
+
+class Framework {
+    public id: uuid
+    public name: string
+    public type: number
+    public data: JSON
+    public createdBy: User
+    public createdOn: Date
+}
+
+class Report {
+    public id: uuid
+    public name: string
+    public data: JSON
+    public createdBy: User
+    public createdOn: Date
+}
+
+Role *-- User
+Permission *-- Role
+User *-- Category
+User *-- Form
+User *-- Program
+User *-- Project
+User *-- Activity
+User *-- Indicator
+User *-- Framework
+User *-- Report
+Form *-- Program
+Form *-- Project
+Form *-- Activity
+Form *-- Indicator
+
+@enduml

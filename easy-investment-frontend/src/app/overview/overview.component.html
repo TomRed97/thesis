@@ -3,16 +3,24 @@
 </div>
 <div class="number-card-container">
   <app-number-card [id]="'programs_number_card'"
-                   [count]="0"
+                   [count]="3"
                    [title]="'Programs'">
   </app-number-card>
   <app-number-card [id]="'projects_number_card'"
-                   [count]="0"
+                   [count]="80"
                    [title]="'Projects'">
   </app-number-card>
   <app-number-card [id]="'activities_number_card'"
-                   [count]="0"
+                   [count]="156"
                    [title]="'Activities'">
   </app-number-card>
+</div>
+<div class="number-card-container" style="margin-top: 100px">
+  <app-progress-overview [done]="33" [inProgress]="33" [notDone]="33">
+  </app-progress-overview>
+  <app-progress-overview [done]="30" [inProgress]="55" [notDone]="15">
+  </app-progress-overview>
+  <app-progress-overview [done]="35" [inProgress]="25" [notDone]="40">
+  </app-progress-overview>
 </div>
 

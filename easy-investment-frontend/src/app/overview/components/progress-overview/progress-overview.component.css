@@ -1,0 +1,15 @@
+.progress_card {
+  width: 250px;
+  height: 160px;
+}
+
+.progress_container {
+  height: 160px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+
+.progress_bar {
+  height: 40px;
+}

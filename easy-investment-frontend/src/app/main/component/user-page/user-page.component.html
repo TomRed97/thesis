@@ -1,0 +1,46 @@
+<mat-card>
+  <div class="user-info">
+    <img src="assets/images/user.png" alt="User" class="user-icon">
+    <div>
+      <p>
+        <span class="user-info-label">
+          First Name:
+        </span>
+        <span>
+          {{user.firstName}}
+        </span>
+      </p>
+      <p>
+        <span class="user-info-label">
+          Last Name:
+        </span>
+        <span>
+          {{user.lastName}}
+        </span>
+      </p>
+      <p>
+        <span class="user-info-label">
+          Email:
+        </span>
+        <span>
+          {{user.email}}
+        </span></p>
+      <p>
+        <span class="user-info-label">
+          Work Place:
+        </span>
+        <span>
+          {{user.workPlace}}
+        </span>
+      </p>
+      <p>
+        <span class="user-info-label">
+          Birth Date:
+        </span>
+        <span>
+        {{user.birthDate | date}}
+      </span></p>
+    </div>
+  </div>
+  <h2>{{user.userName}}</h2>
+</mat-card>

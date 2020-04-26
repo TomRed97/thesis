@@ -1,0 +1,31 @@
+<div style="display: flex; width: 100%">
+  <div id="container" style="min-width: 600px;"></div>
+</div>
+<div>
+  <mat-form-field>
+    <mat-label>Select Category</mat-label>
+    <mat-select [(value)]="selectedCategory">
+      <mat-option [value]="null">None</mat-option>
+      <mat-option [value]="1">Program</mat-option>
+      <mat-option [value]="2">Project</mat-option>
+      <mat-option [value]="3">Activity</mat-option>
+      <mat-option [value]="4">Indicator</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Select Measure</mat-label>
+    <mat-select [(value)]="selectedMeasure">
+      <mat-option [value]="null">None</mat-option>
+      <mat-option [value]="1">Project</mat-option>
+      <mat-option [value]="2">Indicator</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Select Aggregation</mat-label>
+    <mat-select [(value)]="selectedAggregation">
+      <mat-option [value]="null">None</mat-option>
+      <mat-option [value]="1">Count</mat-option>
+      <mat-option [value]="2">Average</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

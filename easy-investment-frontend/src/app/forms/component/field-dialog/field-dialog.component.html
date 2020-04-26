@@ -1,0 +1,59 @@
+<div style="text-align: center">
+  <h1 mat-dialog-title>Create New Field</h1>
+  <div mat-dialog-content>
+    <form>
+      <div>
+        <mat-form-field class="category_name">
+          <mat-label>Field Name</mat-label>
+          <input matInput
+                 required
+                 [name]="'field_name'"
+                 placeholder="Field Name"
+                 [(ngModel)]="fieldName">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Select field type</mat-label>
+          <mat-select [(value)]="selectedFieldType" required>
+            <mat-option [value]="null">None</mat-option>
+            <mat-option [value]="fieldType.NUMBER">Number</mat-option>
+            <mat-option [value]="fieldType.STRING">String</mat-option>
+            <mat-option [value]="fieldType.DATE">Date</mat-option>
+            <mat-option [value]="fieldType.CATEGORY">Category</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Select Category</mat-label>
+          <mat-select [(value)]="selectedCategoryType" required>
+            <mat-option [value]="null">None</mat-option>
+            <mat-option [value]="1">Organisation</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-label>Choose Category Option</mat-label>
+        <mat-radio-group
+          class="example-radio-group"
+          [(ngModel)]="selectedCategoryOptionType" name="category_option">
+          <mat-radio-button class="example-radio-button" [value]="categoryOptionType.ONE_SELECT">
+            One Select
+          </mat-radio-button>
+          <mat-radio-button class="example-radio-button" [value]="categoryOptionType.MULTI_SELECT">
+            Multi Select
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </form>
+  </div>
+
+  <div mat-dialog-actions class="buttons_container">
+    <button mat-flat-button color="accent" (click)="onCancel()">Cancel</button>
+    <button mat-flat-button color="primary"
+            [disabled]='!fieldName' cdkFocusInitial>
+      Create Field
+    </button>
+  </div>
+</div>

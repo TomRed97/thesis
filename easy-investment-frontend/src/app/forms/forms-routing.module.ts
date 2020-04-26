@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {FormsComponent} from './forms.component';
 import {FormTableComponent} from './component/form-table/form-table.component';
+import {CategoryFormComponent} from './component/category-form/category-form.component';
 
 
 const routes: Routes = [
@@ -17,10 +18,10 @@ const routes: Routes = [
         path: 'form-table',
         component: FormTableComponent
       },
-      // {
-      //   path: 'forms',
-      //   loadChildren: () => import('../forms/forms.module').then(m => m.FormsModule)
-      // }
+      {
+        path: 'form/:id',
+        component: CategoryFormComponent
+      },
     ]
   },
 ];

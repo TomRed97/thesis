@@ -1,0 +1,14 @@
+.user-icon {
+  width: 230px;
+  height: 170px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.user-info-label {
+  font-weight: bold;
+}

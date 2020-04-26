@@ -13,7 +13,11 @@ export class UsersService {
         return this.usersRepository.find();
     }
 
-    public findOne(id: string): Promise<User> {
+    public findOneById(id: string): Promise<User | undefined> {
         return this.usersRepository.findOne(id);
+    }
+
+    public findOneByUsername(username: string): Promise<User | undefined> {
+        return this.usersRepository.findOne({username});
     }
 }

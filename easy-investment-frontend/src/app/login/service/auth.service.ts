@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
+import {UserModel} from '../../shared/model/user/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +16,15 @@ export class AuthService {
     } else {
       return of(false);
     }
+  }
+
+  public getCurrentUser(): UserModel {
+    return new UserModel(1,
+      'admin',
+      'Administrator',
+      'admin',
+      't@g.com',
+      'NUACA',
+      new Date());
   }
 }

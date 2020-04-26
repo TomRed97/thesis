@@ -5,6 +5,8 @@ import {FormModel} from '../../shared/model/form.model';
 import {formTypeMessages} from '../../../shared/data/general-data';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import {NewFormDialogComponent} from '../new-form-dialog/new-form-dialog.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-form-table',
@@ -37,7 +39,7 @@ export class FormTableComponent implements OnInit {
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor(private formService: FormService) {
+  constructor(private formService: FormService, public dialog: MatDialog) {
     this.displayedColumns = ['name', 'formType', 'details', 'createdDate', 'creatorId'];
     this.formTypeMessages = formTypeMessages;
   }
@@ -58,5 +60,14 @@ export class FormTableComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  public openFormDialog() {
+    const dialogRef = this.dialog.open(NewFormDialogComponent, {
+      width: '350',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
 }

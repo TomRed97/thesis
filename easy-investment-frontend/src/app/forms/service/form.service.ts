@@ -29,4 +29,8 @@ export class FormService {
 
     return of(forms);
   }
+
+  public createForm(form: FormModel): Observable<number> {
+    return of(50);
+  }
 }

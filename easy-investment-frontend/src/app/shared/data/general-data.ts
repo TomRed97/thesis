@@ -6,3 +6,5 @@ export const formTypeMessages =
     .set(FormType.Project, 'Project')
     .set(FormType.Indicator, 'Indicator')
     .set(FormType.Activity, 'Activity');
+
+export const fieldTypeComponentsMap = new Map();

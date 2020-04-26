@@ -19,3 +19,16 @@ export class UserService {
     return of(this.users);
   }
 }
+// export class UserService {
+//
+//   constructor(private httpClient: HttpClient) {
+//   }
+//
+//   public getAllUsers(): Observable<UserModel[]> {
+//     return this.httpClient.get<UserModel[]>('localhost:3000/users');
+//   }
+//
+//   public getUserById(id: number): Observable<UserModel> {
+//     return this.httpClient.get<UserModel>(`localhost:3000/users/${id}`);
+//   }
+// }

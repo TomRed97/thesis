@@ -1,0 +1,12 @@
+<button mat-button color="primary" (click)="openFieldDialog()">Create Field</button>
+<mat-card style="width: 100%; height: 500px">
+  <h3>Program Form</h3>
+  <div style="margin-top: 25px">
+    <mat-form-field>
+      <input matInput
+             required
+             [name]="'name'"
+             placeholder="Field Name" disabled>
+    </mat-form-field>
+  </div>
+</mat-card>
