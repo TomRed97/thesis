@@ -18,6 +18,6 @@ export class UsersService {
     }
 
     public findOneByUsername(username: string): Promise<User | undefined> {
-        return this.usersRepository.findOne({username});
+        return this.usersRepository.findOne({username}, { relations: ['role'] });
     }
 }

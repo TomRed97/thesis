@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from './service/auth.service';
 import {Router} from '@angular/router';
 import {FormControl, Validators} from '@angular/forms';
+import {AuthService} from '../auth/service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -26,13 +26,16 @@ export class LoginComponent implements OnInit {
   public login(): void {
     this.authService.login(this.username, this.password)
       .subscribe(data => {
-        if (data) {
-          this.router.navigateByUrl('/main');
-        } else {
-          this.pswFormControl.setErrors({invalid: true});
-          this.userFormControl.setErrors({invalid: true});
-        }
-      });
+          if (data) {
+            this.router.navigateByUrl('/main');
+          } else {
+            this.pswFormControl.setErrors({invalid: true});
+            this.userFormControl.setErrors({invalid: true});
+          }
+        },
+        (err: any) => {
+          console.error(err);
+        });
   }
 
 }

@@ -8,3 +8,5 @@ export const formTypeMessages =
     .set(FormType.Activity, 'Activity');
 
 export const fieldTypeComponentsMap = new Map();
+
+export const BASE_HTTP_URL = 'http://localhost:3001/';

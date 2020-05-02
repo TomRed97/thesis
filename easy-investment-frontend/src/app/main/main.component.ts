@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Route, Router} from '@angular/router';
+import {AuthService} from '../auth/service/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -8,12 +8,14 @@ import {ActivatedRoute, Route, Router} from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private routes: Router) {
-    // this.route.
-    console.log(this.routes.url)
+  constructor(private authService: AuthService) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
+  }
+
+  public onLogOut() {
+    this.authService.logout();
   }
 
 }

@@ -1,4 +1,6 @@
-import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import {Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
+import {RoleEntity} from '../role/role.entity';
+import {PermissionEntity} from '../permission/permission.entity';
 
 @Entity()
 export class User {
@@ -26,4 +28,11 @@ export class User {
 
     @Column({nullable: true})
     public birthDate: Date;
+
+    @ManyToOne(type => RoleEntity, role => role.user)
+    public role: RoleEntity;
+
+    @ManyToMany(type => PermissionEntity)
+    @JoinTable()
+    public permissions: PermissionEntity[];
 }

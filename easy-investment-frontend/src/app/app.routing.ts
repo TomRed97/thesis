@@ -11,7 +11,7 @@ export const appRoutes: Routes = [
     loadChildren: () => import('./main/main.module').then(m => m.MainModule)
   },
   {
-    path: '',
+    path: '**',
     redirectTo: '/login',
     pathMatch: 'full'
   }
