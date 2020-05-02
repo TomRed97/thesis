@@ -3,7 +3,6 @@ import {AuthService} from './auth/auth.service';
 import {LocalAuthGuard} from './auth/local-auth.guard';
 import {RoleGuard} from './role/guard/role.guard';
 import {Role} from './role/decorator/role.decorator';
-import {PermissionGuard} from './permission/guard/permission.guard';
 import {Permission} from './permission/decorator/permission.decorator';
 import {JwtAuthGuard} from './auth/jwt-auth.guard';
 
