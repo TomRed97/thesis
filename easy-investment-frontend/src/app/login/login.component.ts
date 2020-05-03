@@ -24,18 +24,20 @@ export class LoginComponent implements OnInit {
   }
 
   public login(): void {
-    this.authService.login(this.username, this.password)
-      .subscribe(data => {
-          if (data) {
-            this.router.navigateByUrl('/main');
-          } else {
-            this.pswFormControl.setErrors({invalid: true});
-            this.userFormControl.setErrors({invalid: true});
-          }
-        },
-        (err: any) => {
-          console.error(err);
-        });
+    if (this.username && this.password) {
+      this.authService.login(this.username, this.password)
+        .subscribe(data => {
+            if (data) {
+              this.router.navigateByUrl('/main');
+            } else {
+              this.pswFormControl.setErrors({invalid: true});
+              this.userFormControl.setErrors({invalid: true});
+            }
+          },
+          (err: any) => {
+            console.error(err);
+          });
+    }
   }
 
 }

@@ -7,6 +7,10 @@ import {ProgramComponent} from './component/program/program.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -16,7 +20,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     ProgramsRoutingModule,
     MatCardModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatProgressBarModule
   ]
 })
-export class ProgramsModule { }
+export class ProgramsModule {
+}

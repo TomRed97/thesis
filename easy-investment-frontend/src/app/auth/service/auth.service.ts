@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {UserModel} from '../../shared/model/user/user.model';
-import {HttpClient, HttpErrorResponse, HttpResponse} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {BASE_HTTP_URL} from '../../shared/data/general-data';
 import {catchError, map} from 'rxjs/operators';
 import {Router} from '@angular/router';

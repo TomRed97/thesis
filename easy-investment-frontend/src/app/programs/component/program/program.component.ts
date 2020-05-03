@@ -30,7 +30,7 @@ export class ProgramComponent implements OnInit {
       this.dataSource = new MatTableDataSource<ProjectModel>(projects);
       this.dataSource.paginator = this.paginator;
       this.dataSourceIndicators =
-        new MatTableDataSource<{ name: string }>([{name: 'outcomes per day'}]);
+        new MatTableDataSource<{ name: string }>([{name: '1 շաբաթում հավաքագրված կամավորների քանակը, տվյալները '}]);
     });
   }
 
